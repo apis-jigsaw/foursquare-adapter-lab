@@ -26,12 +26,16 @@ def test_client_created_with_url():
 
 
 # 2. Then lets work towards combining this authentication data in a dictionary.  
-# Write a function called auth_params() that returns a dictionary with the previously defined data
+# Write a function called auth_params() that returns a dictionary 
+# with keys of `client_id`, `client_secret`, and `v`, and values of
+# the client_id defined as a class variable, the client secret, and `v` 
+# can correspond to a date eg. '20190407'
 # Reference the class variables in doing so.
 
 def test_auth_params_returns_dictionary_of_client_id_secret_and_v():
     client = Client()
     assert list(client.auth_params().keys()) == ['client_id', 'client_secret', 'v']
+    assert list(client.auth_params().values())[:2] == ['ALECV5CBBEHRRKTIQ5ZV143YEXOH3SBLAMU54SPHKGZI1ZKE', '3JX3NRGRS2P0KE0NSKPTMCOZOY4MWUU4M3G33BO4XTRJ15SM']
 
 
 # 3. Now we want to combine these auth_params with our query params so that we can search the api
