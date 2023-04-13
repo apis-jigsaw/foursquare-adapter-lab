@@ -28,7 +28,7 @@ def test_client_created_with_url():
 
 # 2. Then lets work towards combining this authentication data in a dictionary.  
 # Write a function called auth_params() that returns a dictionary with the previously defined data
-# Reference the class variables in doing so.
+# Reference the class variable (of URL) in doing so.
 
 def test_auth_params_returns_dictionary_of_client_id_secret_and_v():
     client = Client()
