@@ -38,12 +38,11 @@ def returns_a_venue():
 def test_extracts_id_name_price_rating_likes_menu_url():
     builder = VenueBuilder(response_venue)
     venue = builder.run()
-    list(venue.__dict__.keys()) ==  ['foursquare_id', 'name', 'price',
+    assert list(venue.__dict__.keys()) ==  ['foursquare_id', 'name', 'price',
             'rating', 'likes', 'menu_url']
     assert list(venue.__dict__.values()) == ['5b2932a0f5e9d70039787cf2', 
-    'Los Tacos Al Pastor', 1, 53,
+    'Los Tacos Al Pastor', 1, 7.3, 53,
     'https://www.seamless.com/menu/los-tacos-al-pastor-141a-front-st-brooklyn/857049']
-
 # Now if you look at the venuebuilder, the run function has a good amount of code.
 # Let's break this into multiple functions.  
 # Create a new function called `select_attributes` that uses the data 
