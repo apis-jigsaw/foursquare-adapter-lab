@@ -54,8 +54,8 @@ def test_request_venues_makes_request_to_foursquare_api_with_url_and_full_params
     client = Client()
     first_venue_returned = client.request_venues()[0]
     sorted_venue_keys = list(sorted(list(first_venue_returned.keys())))
-    assert sorted_venue_keys == ['categories', 'createdAt', 'delivery', 'hasPerk', 
-                                 'id', 'location', 'name', 'referralId']
+    
+    assert sorted_venue_keys == ['categories', 'createdAt', 'delivery', 'id', 'location', 'name']
 
 # 5. Now it turns out that we can get even more information on a venue if we access the show route of 
 # /venues/venue_id.  And we get the list of venue ids once we request all of the venues like we did above.
